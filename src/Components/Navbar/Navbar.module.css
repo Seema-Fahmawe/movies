@@ -1,0 +1,39 @@
+.navLink {
+    color: #fff !important;
+    transition: 0.5s !important;
+    font-weight: 500;
+}
+
+.navLink:hover,
+.dropItem:hover {
+    color: var(--mainColor) !important;
+}
+
+.dropMenu {
+    left: -100px !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropItem {
+    font-weight: 500;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.navbar {
+    z-index: 9999999;
+}
+
+.navbar::after {
+    content: '';
+    width: 100%;
+    height: 1.7px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFFFF26;
+}

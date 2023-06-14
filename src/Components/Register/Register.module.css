@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+.bg {
+    padding: 30px;
+    margin: auto;
+
+}
+
+.label {
+    font-size: 16px;
+    line-height: 1.7em;
+    color: #212121;
+    font-weight: 500;
+}
+
+.formControl {
+    border-radius: 0;
+    padding: .48rem .75rem;
+}
+
+.formControl:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.formControl::placeholder {
+    color: #9E9E9E;
+}
+
+.btnSubmit {
+    background-color: var(--mainColor);
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 500;
+    padding: 0.47rem 0.8rem;
+    width: 100%;
+}
+
+.btnSubmit:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--mainColor);
+    color: #fff;
+}
+
+.member {
+    color: #757575 !important;
+    font-weight: 500;
+}
+
+.forget {
+    color: #333;
+    line-height: 1.7em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.forget:hover {
+    text-decoration: underline;
+    color: var(--mainColor);
+}
