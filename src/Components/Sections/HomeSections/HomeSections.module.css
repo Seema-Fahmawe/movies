@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+
+.img {
+    border-radius: 30px;
+}
+
+.titleSections {
+    font-family: var(--MainFont);
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.btnTitleSection {
+    padding: 0.25rem 1.5rem;
+    font-size: 1rem;
+    border: 3px solid #fff;
+    color: #fff;
+    font-weight: 600;
+    background-color: transparent;
+    box-shadow: unset;
+    transition: color .3s ease, background-color .3s ease;
+    border-radius: 30px;
+    font-family: var(--MainFont);
+    margin-left: auto;
+    transition: color .3s ease, background-color .3s ease;
+}
+
+.btnTitleSection:hover {
+    box-shadow: unset;
+    color: red;
+    background-color: #fff;
+}
+
+.link {
+    font-size: 1em;
+    padding: 1px 20px 1px 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: var(--mainColor);
+    color: black;
+    display: inline-block;
+    border: none;
+    color: #fff;
+}
+
+.link2 {
+    font-size: 1em;
+    padding: 1px 20px 1px 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #fff;
+    color: black;
+    display: inline-block;
+    border: none;
+}
+
+.btnIcon {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 40px);
+    background-color: red;
+    color: #fff;
+    border-radius: 30px;
+    padding: 0.4rem 1.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 0 7px 8px rgba(255, 0, 0, .3019607);
+    border: 4px solid transparent;
+    transition: 0.7s;
+    opacity: 0;
+}
+
+.btnIcon:hover {
+    box-shadow: 0 0 7px 15px rgba(255, 0, 0, .3019607843);
+}
+
+.imageItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity .3s ease;
+    border-radius: 30px;
+}
+
+.imageItem:hover .btnIcon {
+    opacity: 1;
+}
+
+.imageItem:hover::before {
+    opacity: 1;
+}
+
+.links {
+    border-radius: 30px;
+    border: 1px solid var(--mainColor);
+    background-color: #fff;
+}
+
+.titleTrending {
+    color: #fff;
+    font-weight: 800;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.17em;
+    margin: 0;
+}
+
+.item {
+    position: relative;
+}
+
+.item:hover .titleTrending {
+    color: var(--mainColor) !important;
+}
+
+.descTrending {
+    font-size: 1em;
+    color: #5e5b5b;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+
+.header {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 140vh;
+    background-size: cover;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.content {
+    position: absolute;
+    top: 35%;
+    z-index: 999;
+}
+
+.Headertitle {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.HeaderoverView {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.btn {
+    border-radius: 30px;
+    padding: 0.2rem 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.Btn1 {
+    border: 4px solid transparent;
+    background-color: red;
+    box-shadow: 0 0 7px 8px rgba(255, 0, 0, .3019607843);
+    transition: box-shadow .3s ease;
+    margin-right: 20px;
+}
+
+.Btn1:hover {
+    box-shadow: 0 0 7px 15px rgba(255, 0, 0, .3019607843);
+}
+
+.Btn2 {
+    border: 3px solid #fff;
+    background-color: transparent;
+    box-shadow: unset;
+    transition: color .3s ease, background-color .3s ease;
+    padding:0.3rem 1.8rem ;
+}
+
+.Btn2:hover {
+    box-shadow: unset;
+    color: var(--mainColor);
+    background-color: #fff;
+}
+
+
+
+.imageHeader {
+    width: 400px;
+    height: 580px;
+    border-radius: 30px;
+}
+
+.image {
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}

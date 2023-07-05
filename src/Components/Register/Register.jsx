@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styles from './Register.module.css';
-import Header from '../Header/Header.jsx';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { regSchema } from '../Schemas/RegisterSchema.jsx';
 import CustomInput from '../Custome/CustomInput.jsx';
+import CustomeHeaderSections from '../Custome/CustomeHeaderSections.jsx';
 
 export default function Register() {
 
@@ -15,7 +15,7 @@ export default function Register() {
       userName: '',
       password: '',
       cPassword: ''
-    }, 
+    },
     validationSchema: regSchema,
     onSubmit: registerData,
   })
@@ -26,7 +26,7 @@ export default function Register() {
 
   async function registerData(values) {
     const { data } = await axios.post('https://king-prawn-app-3mgea.ondigitalocean.app/auth/signup', values).catch((err) => {
-    if (err.response.data.message === "Email exist") {
+      if (err.response.data.message === "Email exist") {
         setError(err.response.data.message)
         setStatusError([]);
       } else {
@@ -43,7 +43,7 @@ export default function Register() {
 
   return (
     <>
-      <Header />
+      <CustomeHeaderSections title="My Accout" type="register" />
       <div className="container-fluid px-sm-5">
         <div className={`${styles.bg} col-lg-5 col-md-9 login my-5`}>
           <h2 className=' fs-4 text-center mb-4'>Register</h2>

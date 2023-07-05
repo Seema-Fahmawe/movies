@@ -1,0 +1,31 @@
+.img {
+    height: 235px;
+}
+
+.colmd3 {
+    width: 20%;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 1.1em;
+    font-family: var(--mainFont);
+}
+
+.descPeople {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 0;
+    width: 100%;
+}
+
+.NoItems {
+    height: 35vh;
+}
+
+.title {
+    font-size: 1.6em;
+    margin: 50px 0px;
+    text-align: center;
+}

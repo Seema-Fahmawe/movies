@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styles from '../Register/Register.module.css';
-import Header from '../Header/Header.jsx';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { logSchema } from './../Schemas/LoginSchemas';
 import CustomInput from '../Custome/CustomInput.jsx';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import CustomeHeaderSections from '../Custome/CustomeHeaderSections.jsx';
 
 export default function Login({ getUser }) {
 
@@ -35,7 +35,7 @@ export default function Login({ getUser }) {
     if (data.message === 'Done') {
       setError('');
       setStatusError([]);
-      navigate('/');
+      navigate('/home');
       localStorage.setItem('token', data.access_token);
       getUser();
     }
@@ -43,7 +43,7 @@ export default function Login({ getUser }) {
 
   return (
     <>
-      <Header />
+      <CustomeHeaderSections title="My Accout" type="login" />
       <div className="container-fluid px-sm-5">
         <div className={`${styles.bg} col-lg-5 col-md-9 login my-5`}>
           <h2 className=' fs-4 text-center mb-4'>Login</h2>
@@ -63,7 +63,13 @@ export default function Login({ getUser }) {
             </div>
 
             <button type="submit" className={`${styles.btnSubmit} btn mb-3`}>Log in</button>
-            <a href='#' className={`${styles.forget}`}>Lost your password?</a>
+            <Link to='/forgetPassword' className={`${styles.forget}`} >Lost your password?</Link>
+            
+            <div className="register d-flex align-items-center gap-4">
+              <p className='mt-4'>Don't have an account ?</p>
+              <Link to='/register' className={`${styles.forget} ${styles.registerNow} `} >Register now</Link>
+            </div>
+
           </form>
 
         </div>

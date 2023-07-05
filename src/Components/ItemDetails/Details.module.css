@@ -1,0 +1,180 @@
+.header {
+    height: 50vh;
+    position: relative;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 30rem;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    background-image: linear-gradient(0deg, #0f0f0f, transparent);
+    left: 0;
+    width: 100%;
+}
+
+
+.imageHeader {
+    width: 100%;
+    border-radius: 30px;
+    height: 580px;
+}
+
+.image {
+    width: 380px;
+    z-index: 999;
+    margin-top: 10%;
+}
+
+
+.col8 {
+    z-index: 99999;
+    margin-top: 10%;
+}
+
+.titleMovie {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--MainFont);
+    font-weight: 600;
+}
+
+.genre {
+    padding: 0.4rem 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-size: .8rem;
+    font-weight: 600;
+    background-color: #0f0f0f;
+    font-family: var(--MainFont);
+}
+
+.castName {
+    font-size: 0.8rem;
+    font-family: var(--MainFont);
+    margin-top: 0.4rem;
+    color: #fff;
+}
+
+.more {
+    width: fit-content;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding-bottom: 40px;
+    cursor: pointer;
+}
+
+.slickSlide {
+    width: 33rem !important;
+}
+
+.titleSections {
+    font-family: var(--MainFont);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.url {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000;
+    transition: 0.5s;
+    padding-right: 5px;
+    margin: 0;
+}
+
+.url:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.info {
+    padding-left: 10px;
+    display: flex;
+    color: #000;
+}
+
+.content {
+    padding-left: 10px;
+    color: #000;
+}
+
+.card {
+    height: 300px;
+}
+
+.readMore {
+    color: #000;
+    text-decoration: underline;
+    transition: 0.5s;
+    padding-left: 3px;
+}
+
+.readMore:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.rating {
+    background-color: #000;
+    color: #fff;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1px 6px;
+    margin-top: 5px;
+}
+
+.imgReview {
+    border-radius: 50%;
+}
+
+.starIcon {
+    font-size: 0.7em;
+    padding-right: 4px;
+
+}
+
+.imageReview {
+    width: 64px;
+    height: 64px;
+}
+
+.writer {
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #000;
+}
+
+.readMorePeople {
+    color: rgb(1, 180, 228);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+    padding-left: 10px;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.readMorePeople:hover {
+    color: rgb(30, 213, 169);
+}
+
+.infoPersonal {
+    font-size: 23px;
+}

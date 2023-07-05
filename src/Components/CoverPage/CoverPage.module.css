@@ -1,0 +1,27 @@
+.header {
+    background-image: url(../../../public/assets/images/HeaderSections.jpg);
+    background-size: cover;
+    height: 100vh;
+    padding-top: 17rem;
+}
+
+.title {
+    font-family: var(--MainFont);
+    font-size: 2.4rem;
+}
+
+.startbtn {
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-height: 3.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--mainColor);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.startbtn:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--mainColor);
+}
