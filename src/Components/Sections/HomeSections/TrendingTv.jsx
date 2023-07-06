@@ -16,7 +16,7 @@ export default function TrendingTv() {
 
     useEffect(() => {
         getTrending('day');
-    },[]);
+    }, []);
 
     var settings = {
         dots: false,

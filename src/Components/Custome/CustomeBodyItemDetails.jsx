@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../ItemDetails/Details.module.css';
 import Slider from 'react-slick';
 import dateFormat from 'dateformat';
 import CustomeBodyHomeSections from './CustomeBodyHomeSections.jsx';
+import LoaderSection from '../LoaderSections/LoaderSection.jsx';
 
 export default function CustomeBodyItemDetails({ video, review, recommendation, similar, type }) {
+
+
 
     var settings = {
         dots: false,
@@ -60,10 +63,11 @@ export default function CustomeBodyItemDetails({ video, review, recommendation, 
         }
     }
 
-
+    console.log(video);
     return (
         <>
             <div className="container-fluid px-md-5">
+
                 {review.length > 0 ? <>
                     <div className="reviews">
                         <div className="title mb-3">
@@ -117,7 +121,7 @@ export default function CustomeBodyItemDetails({ video, review, recommendation, 
                             {video.map((item) => {
                                 return <div className='item' key={item.id}>
                                     <div className="video mb-5">
-                                        <iframe width="625" height="420" src={`https://www.youtube.com/embed/${item.key}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="625" height="420" src={`https://www.youtube.com/embed/'${item.key}'`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             })}

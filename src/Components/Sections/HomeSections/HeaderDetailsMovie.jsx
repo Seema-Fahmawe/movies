@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { moviesTvPeopleContext } from '../../Context/MoviesTVPeopleContext.jsx';
 
 export default function HeaderDetailsMovie({ movie, type }) {
+    
     const navigate = useNavigate();
-
     const [videos, setVideos] = useState([]);
     const { getVideosContext } = useContext(moviesTvPeopleContext);
 
@@ -34,7 +34,7 @@ export default function HeaderDetailsMovie({ movie, type }) {
 
     return (
         <>
-            <div className={styles.header} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})` }} >
+            <div className={styles.header} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})` } }  >
                 <div className="container-fluid px-md-5">
                     <div className="items">
                         <div className="row">
@@ -54,7 +54,7 @@ export default function HeaderDetailsMovie({ movie, type }) {
                                 </div>
                             </div>
                             <div className={`${styles.image} col-md-6 `}>
-                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className={styles.imageHeader} />
+                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className={styles.imageHeader} alt={movie.title} title={movie.title} />
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { moviesTvPeopleContext } from '../../Context/MoviesTVPeopleContext.jsx';
 import CustomeHeaderItemDetails from '../../Custome/CustomeHeaderItemDetails.jsx';
 import CustomeBodyItemDetails from '../../Custome/CustomeBodyItemDetails.jsx';
+import LoaderSection from '../../LoaderSections/LoaderSection.jsx';
 
 export default function MovieDetails() {
 
@@ -21,6 +22,7 @@ export default function MovieDetails() {
     const { getReviewsContext } = useContext(moviesTvPeopleContext);
     const { getRecommendatinsContext } = useContext(moviesTvPeopleContext);
     const { getSimilarContext } = useContext(moviesTvPeopleContext);
+    const [loading, setLoading] = useState(true);
 
     async function getDetails() {
         const res = await getItemDetailsContext(id, 'movie');
@@ -53,7 +55,6 @@ export default function MovieDetails() {
         const res = await getSimilarContext(id, 'movie');
         setSimilar(res.results);
     }
-    
     useEffect(() => {
         getDetails();
         getCredits();
@@ -61,13 +62,21 @@ export default function MovieDetails() {
         getReviews();
         getRecommendatins();
         getSimilar();
+
     }, [id]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 4000);
+    }, []);
 
 
     return (
         <>
-            <CustomeHeaderItemDetails item={movie} genres={genres} casts={casts} setCasts={setCasts} castAll={castAll} type="Movie" />
-            <CustomeBodyItemDetails video={videos} review={reviews} recommendation={recommendation} similar={similar} type="Movie" id={id} />
+            {loading ? <><LoaderSection /></> : <><CustomeHeaderItemDetails item={movie} genres={genres} casts={casts} setCasts={setCasts} castAll={castAll} type="Movie" />
+                <CustomeBodyItemDetails video={videos} review={reviews} recommendation={recommendation} similar={similar} type="Movie" id={id} /></>}
+
         </>
     )
 }

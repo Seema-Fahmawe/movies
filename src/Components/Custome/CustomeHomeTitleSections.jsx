@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styles from '../Sections/HomeSections/HomeSections.module.css';
 
-export default function CustomeHomeTitleSections({ title, link1, link2, link3, link4, onClick1, onClick2, section }) {
+export default function CustomeHomeTitleSections({ title, link1, link2, onClick1, onClick2, section }) {
 
   function clickdata() {
     let btn1 = document.querySelector('.link1');

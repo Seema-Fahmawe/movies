@@ -4,6 +4,7 @@ import CustomeHeaderSections from '../Custome/CustomeHeaderSections.jsx';
 import { moviesTvPeopleContext } from '../Context/MoviesTVPeopleContext.jsx';
 import CustomeBodyListType from '../Custome/CustomeBodyListType.jsx';
 import Filter from '../utils/Filter.jsx';
+import LoaderSection from '../LoaderSections/LoaderSection.jsx';
 
 export default function TopRatedMovies() {
 
@@ -27,22 +28,22 @@ export default function TopRatedMovies() {
   return (
     <>
       <CustomeHeaderSections title="Top Rated Movies" type='Movie' valType={filtered} setType={setSearchItem} />
-
       <div className="container-fluid px-md-5">
         <Filter items={movies} setFiltered={setFiltered} filtered={filtered} setSearchItem={setSearchItem} activeGenre={activeGenre} setActiveGenre={setActiveGenre} type='movie' />
-        <div className="row">
-          {searchItem.length > 0 ? <>
-            {searchItem.map((movie) => {
-              return <CustomeBodyListType key={movie.id} item={movie} type="movie" />
-            })}
-          </> : <>
-            <h2 className={`${styles.title} ${styles.NoItems}`}>No Items</h2>
-          </>
-          }
-
-        </div>
+        {movies.length > 0 ? <>
+          <div className="row">
+            {searchItem.length > 0 ? <>
+              {searchItem.map((movie) => {
+                return <CustomeBodyListType key={movie.id} item={movie} type="movie" />
+              })}
+            </> : <>
+              <h2 className={`${styles.title} ${styles.NoItems}`}>No Items</h2>
+            </>
+            }
+          </div></> : <><LoaderSection /></>}
 
       </div>
+
     </>
   )
 }

@@ -15,7 +15,7 @@ export default function TrendingMovies() {
 
     useEffect(() => {
         getTrending('day');
-    },[]);
+    }, []);
 
     var settings = {
         dots: false,
@@ -27,7 +27,6 @@ export default function TrendingMovies() {
         slidesToShow: 6,
         slidesToScroll: 1
     };
-
 
     return (
         <>

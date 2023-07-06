@@ -36,7 +36,7 @@ export default function CustomeBodyListType({ item, type }) {
                     <Link to={`/movie/${item.id}`}>
                         <div className={`${styles.card} card overflow-hidden`}>
                             <div className="image overflow-hidden">
-                                <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} className={`${styles.img} w-100`} />
+                                <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} className={`${styles.img} w-100`} alt={item.title} title={item.title}/>
                             </div>
                             <div className="desc pt-4 px-3">
                                 <h2 className={styles.titleTrending}>{item.original_title}</h2>
@@ -48,7 +48,7 @@ export default function CustomeBodyListType({ item, type }) {
                     {type === "tv" ? <><Link to={`/tv/${item.id}`}>
                         <div className={`${styles.card} card overflow-hidden`}>
                             <div className="image overflow-hidden">
-                                <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} className={`${styles.img} w-100`} />
+                                <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} className={`${styles.img} w-100`} alt={item.name} title={item.name} />
                             </div>
                             <div className="desc pt-4 px-3">
                                 <h2 className={styles.titleTrending}>{item.original_name}</h2>
@@ -60,7 +60,7 @@ export default function CustomeBodyListType({ item, type }) {
                         {type === "people" ? <><Link to={`/people/${item.id}`}>
                             <div className={`${styles.cardPeople} card overflow-hidden`}>
                                 <div className="image overflow-hidden">
-                                    <img src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} className={`${styles.img} ${styles.imgPeople} w-100`} />
+                                    <img src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} className={`${styles.img} ${styles.imgPeople} w-100`} alt={item.name} title={item.name}/>
                                 </div>
                                 <div className="desc pt-4 px-3">
                                     <p className={styles.peopleName}>{item.name}</p>

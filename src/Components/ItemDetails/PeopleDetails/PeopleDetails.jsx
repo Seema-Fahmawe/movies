@@ -4,14 +4,13 @@ import { moviesTvPeopleContext } from '../../Context/MoviesTVPeopleContext.jsx';
 import HeaderPeopleDetails from './HeaderPeopleDetails.jsx';
 import BodyPeopleDetails from './BodyPeopleDetails.jsx';
 import axios from 'axios';
+import LoaderSection from '../../LoaderSections/LoaderSection.jsx';
 
 export default function PeopleDetails() {
 
     let { id } = useParams();
     const [person, setPerson] = useState({});
-    const [persons, setPersons] = useState([]);
     const { getItemDetailsContext } = useContext(moviesTvPeopleContext);
-    const { getListMoviesAndTVsAndPeopleContext } = useContext(moviesTvPeopleContext);
 
     const [movieCasts, setMovieCasts] = useState([]);
     const [movieCrew, setMovieCrew] = useState([]);
@@ -25,19 +24,12 @@ export default function PeopleDetails() {
         let { data } = await axios.get(`https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=6e56c2675e23a05853e1fb0d1f3a0e93`);
         setMovieCasts(data.cast);
         setMovieCrew(data.crew);
-        setMovies(movieCasts.concat(movieCrew));
     }
 
     async function tvCredits() {
         let { data } = await axios.get(`https://api.themoviedb.org/3/person/${id}/tv_credits?api_key=6e56c2675e23a05853e1fb0d1f3a0e93`);
         setTvCast(data.cast);
         setTvCrew(data.crew);
-        setTv(tvCasts.concat(tvCrew));
-    }
-
-    async function getPeople() {
-        const res = await getListMoviesAndTVsAndPeopleContext('person', 'popular');
-        setPersons(res.results);
     }
 
     async function getDetails() {
@@ -46,16 +38,24 @@ export default function PeopleDetails() {
     }
 
     useEffect(() => {
+        setMovies(movieCasts.concat(movieCrew));
+    }, [movieCasts, movieCrew]);
+
+    useEffect(() => {
+        setTv(tvCasts.concat(tvCrew));
+    }, [tvCasts, tvCrew]);
+
+    useEffect(() => {
         getDetails();
-        getPeople();
         tvCredits();
         movieCredits();
     }, [id]);
 
     return (
         <>
-            <HeaderPeopleDetails person={person}  />
-            <BodyPeopleDetails person={person} tv={tvCasts} movies={movieCasts} />
+            {movies.length > 0 || tv.length > 0 ? <>
+                <HeaderPeopleDetails person={person} />
+                <BodyPeopleDetails person={person} tv={tv} movies={movies} /></> : <><LoaderSection /></>}
         </>
     )
 }

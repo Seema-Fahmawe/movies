@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../Details.module.css';
-import Slider from 'react-slick';
-
 
 export default function HeaderPeopleDetails({ person }) {
 
     const [bio, setBio] = useState(' ');
     const [bioAll, setBioAll] = useState(' ');
-
-    var settings = {
-        dots: false,
-        arrows: false,
-        infinite: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1
-    };
 
     let bioStyle = document.querySelector('.bio');
 
@@ -30,8 +17,8 @@ export default function HeaderPeopleDetails({ person }) {
 
     function setBioText() {
         setBio(bioAll);
-        bioStyle.style.fontSize = '14px';
-
+        bioStyle.style.height = '300px';
+        bioStyle.style.overflowY='scroll';
     }
 
     return (
@@ -54,7 +41,7 @@ export default function HeaderPeopleDetails({ person }) {
                                         <div className="biography mb-4 mt-3">
                                             <h2>Biography</h2>
                                             {person.biography === bio ? <p className='bio'>{bio}</p> :
-                                                <p className='bio'>{bio}<span className={styles.readMorePeople} id='more' onClick={setBioText} > Read More <i class="fa-solid fa-angle-right pt-1"></i></span></p>
+                                                <p className={`${styles.biostyle} bio`}>{bio}<span className={styles.readMorePeople} id='more' onClick={setBioText} > Read More <i class="fa-solid fa-angle-right pt-1"></i></span></p>
                                             }
                                         </div></> : <></>}
 

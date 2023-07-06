@@ -25,6 +25,7 @@ import Loader from './Components/Loader/Loader';
 import CoverPage from './Components/CoverPage/CoverPage.jsx';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword.jsx';
 import ResetPassword from './Components/ResetPassword/ResetPassword.jsx';
+import { Helmet } from 'react-helmet';
 
 function App() {
 
@@ -43,7 +44,7 @@ function App() {
     }
     setTimeout(() => {
       setLoading(false);
-    }, 9000)
+    }, 4000)
   }, [])
 
 
@@ -76,6 +77,11 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>MoviesApp</title>
+        <meta name='description' content='movies app content all movies and tv ' />
+      </Helmet>
       {loading ? <><Loader /></> : <>
         <MoviesTVPeopleContextProvider >
           <RouterProvider router={router} />

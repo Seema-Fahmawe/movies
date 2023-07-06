@@ -32,7 +32,6 @@ export default function TrendingPeople() {
         <>
             <CustomeHomeTitleSections title="Trending Persons" link1="Today" link2="This Week" onClick1={() => getTrending('day')} onClick2={() => getTrending('week')} section="people" />
             <CustomeBodyHomeSections items={trendingPeople} type='People' setting={settings} />
-
         </>
     )
 }

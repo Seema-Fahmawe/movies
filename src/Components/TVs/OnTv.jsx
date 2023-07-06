@@ -4,6 +4,7 @@ import CustomeHeaderSections from '../Custome/CustomeHeaderSections.jsx';
 import { moviesTvPeopleContext } from '../Context/MoviesTVPeopleContext.jsx';
 import CustomeBodyListType from '../Custome/CustomeBodyListType.jsx';
 import Filter from '../utils/Filter.jsx';
+import LoaderSection from '../LoaderSections/LoaderSection.jsx';
 
 export default function OnTv() {
 
@@ -14,27 +15,25 @@ export default function OnTv() {
   const [searchItem, setSearchItem] = useState(filtered);
 
   async function getTvs() {
-      const res = await getListMoviesAndTVsAndPeopleContext('tv', 'on_the_air');
-      setTv(res.results);
-      setFiltered(res.results);
-      setSearchItem(res.results);
+    const res = await getListMoviesAndTVsAndPeopleContext('tv', 'on_the_air');
+    setTv(res.results);
+    setFiltered(res.results);
+    setSearchItem(res.results);
 
   }
 
 
   useEffect(() => {
     getTvs();
-  },[]);
+  }, []);
 
 
   return (
     <>
-      <CustomeHeaderSections title="Currently Airing TV Shows" type='Tv' valType={filtered} setType={setSearchItem}/>
-
+      <CustomeHeaderSections title="Currently Airing TV Shows" type='Tv' valType={filtered} setType={setSearchItem} />
       <div className="container-fluid px-md-5">
-
-        <Filter items={tv} setFiltered={setFiltered} setSearchItem={setSearchItem} activeGenre={activeGenre} setActiveGenre={setActiveGenre} type='tv'  />
-        <div className="row">
+        <Filter items={tv} setFiltered={setFiltered} setSearchItem={setSearchItem} activeGenre={activeGenre} setActiveGenre={setActiveGenre} type='tv' />
+        {tv.length > 0 ? <> <div className="row">
           {searchItem.length > 0 ? <>
             {searchItem.map((tv) => {
               return <CustomeBodyListType key={tv.id} item={tv} type="tv" />
@@ -43,10 +42,9 @@ export default function OnTv() {
             <h2 className={`${styles.title} ${styles.NoItems}`}>No Items</h2>
           </>
           }
-
-        </div>
-
+        </div></> : <><LoaderSection /></>}
       </div>
+
     </>
   )
 }

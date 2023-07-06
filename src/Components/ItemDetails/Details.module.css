@@ -178,3 +178,7 @@
 .infoPersonal {
     font-size: 23px;
 }
+
+.bioStyle{
+    overflow: none;
+}

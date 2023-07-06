@@ -1,10 +1,9 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext } from 'react'
 
 export const moviesTvPeopleContext = createContext(null);
 
 export default function MoviesTVPeopleContextProvider({ children }) {
-
 
     async function getTrendingContext(valType, time) {
         try {

@@ -7,7 +7,6 @@ export default function CoverPage({ setUser }) {
     setUser(null);
     localStorage.removeItem('token');
 
-    
     return (
         <>
             <div className={`${styles.header} text-center`}>

@@ -38,6 +38,7 @@ export default function CustomeHeaderItemDetails({ item, genres, casts, setCasts
 
     return (
         <>
+        
             <div className={styles.header} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${item.backdrop_path})` }} >
                 <div className="container-fluid px-md-5">
                     <div className="item">
@@ -55,6 +56,7 @@ export default function CustomeHeaderItemDetails({ item, genres, casts, setCasts
                                             <h1 className={styles.titleMovie}>{item.original_name}</h1>
                                         </>}
                                     </div>
+                                    
                                     <div className="genres">
                                         <ul className='d-flex gap-3 p-0 '>
                                             {genres.map((genre) => {
@@ -62,6 +64,7 @@ export default function CustomeHeaderItemDetails({ item, genres, casts, setCasts
                                             })}
                                         </ul>
                                     </div>
+
                                     <div className="overview mb-4 mt-3">
                                         <p>{item.overview}</p>
                                     </div>
