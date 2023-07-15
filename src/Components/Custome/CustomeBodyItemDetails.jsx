@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styles from '../ItemDetails/Details.module.css';
 import Slider from 'react-slick';
 import dateFormat from 'dateformat';
 import CustomeBodyHomeSections from './CustomeBodyHomeSections.jsx';
-import LoaderSection from '../LoaderSections/LoaderSection.jsx';
 
 export default function CustomeBodyItemDetails({ video, review, recommendation, similar, type }) {
-
-
 
     var settings = {
         dots: false,

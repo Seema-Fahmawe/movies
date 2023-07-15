@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CustomeBodyHomeSections from '../../Custome/CustomeBodyHomeSections.jsx';
 import styles from '../Details.module.css';
 

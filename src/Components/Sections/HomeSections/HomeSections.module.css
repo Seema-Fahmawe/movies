@@ -77,6 +77,11 @@
     box-shadow: 0 0 7px 15px rgba(255, 0, 0, .3019607843);
 }
 
+.imageItem {
+    height: 300px;
+    width: 193px;
+}
+
 .imageItem::before {
     content: "";
     position: absolute;
@@ -114,6 +119,8 @@
 
 .item {
     position: relative;
+    height: 400px;
+    width: fit-content;
 }
 
 .item:hover .titleTrending {

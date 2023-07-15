@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../Movies/Movies.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import dateFormat from 'dateformat';
 
 export default function CustomeBodyListType({ item, type }) {
@@ -20,7 +20,7 @@ export default function CustomeBodyListType({ item, type }) {
                 }
             })
         }
-        setDesc(arr.join(' ').slice(0, 24));
+        setDesc(arr.join(' ').slice(0, 22));
     }
 
     useEffect(() => {
