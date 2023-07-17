@@ -11,44 +11,46 @@ export default function CustomeHomeTitleSections({ title, link1, link2, onClick1
     let btn5 = document.querySelector('.link5');
     let btn6 = document.querySelector('.link6');
 
-    if (btn2.addEventListener('click', (event) => {
-      btn2.style.backgroundColor = 'red';
-      btn2.style.color = '#fff';
-      btn1.style.backgroundColor = '#fff';
-      btn1.style.color = 'black';
-    }));
-    btn1.addEventListener('click', (event) => {
-      btn1.style.backgroundColor = 'red';
-      btn1.style.color = '#fff';
-      btn2.style.backgroundColor = '#fff';
-      btn2.style.color = 'black';
-    });
+    if (btn1 && btn2 && btn3 && btn4 && btn5 && btn6) {
+      if (btn2.addEventListener('click', function () {
+        btn2.style.backgroundColor = 'red';
+        btn2.style.color = '#fff';
+        btn1.style.backgroundColor = '#fff';
+        btn1.style.color = 'black';
+      }));
+      btn1.addEventListener('click', function () {
+        btn1.style.backgroundColor = 'red';
+        btn1.style.color = '#fff';
+        btn2.style.backgroundColor = '#fff';
+        btn2.style.color = 'black';
+      });
 
-    if (btn3.addEventListener('click', (event) => {
-      btn3.style.backgroundColor = 'red';
-      btn3.style.color = '#fff';
-      btn4.style.backgroundColor = '#fff';
-      btn4.style.color = 'black';
-    }));
-    btn4.addEventListener('click', (event) => {
-      btn4.style.backgroundColor = 'red';
-      btn4.style.color = '#fff';
-      btn3.style.backgroundColor = '#fff';
-      btn3.style.color = 'black';
-    });
+      if (btn3.addEventListener('click', function () {
+        btn3.style.backgroundColor = 'red';
+        btn3.style.color = '#fff';
+        btn4.style.backgroundColor = '#fff';
+        btn4.style.color = 'black';
+      }));
+      btn4.addEventListener('click', function () {
+        btn4.style.backgroundColor = 'red';
+        btn4.style.color = '#fff';
+        btn3.style.backgroundColor = '#fff';
+        btn3.style.color = 'black';
+      });
 
-    if (btn5.addEventListener('click', (event) => {
-      btn5.style.backgroundColor = 'red';
-      btn5.style.color = '#fff';
-      btn6.style.backgroundColor = '#fff';
-      btn6.style.color = 'black';
-    }));
-    btn6.addEventListener('click', (event) => {
-      btn6.style.backgroundColor = 'red';
-      btn6.style.color = '#fff';
-      btn5.style.backgroundColor = '#fff';
-      btn5.style.color = 'black';
-    });
+      if (btn5.addEventListener('click', function () {
+        btn5.style.backgroundColor = 'red';
+        btn5.style.color = '#fff';
+        btn6.style.backgroundColor = '#fff';
+        btn6.style.color = 'black';
+      }));
+      btn6.addEventListener('click', function () {
+        btn6.style.backgroundColor = 'red';
+        btn6.style.color = '#fff';
+        btn5.style.backgroundColor = '#fff';
+        btn5.style.color = 'black';
+      });
+    }
   }
 
   useEffect(() => {

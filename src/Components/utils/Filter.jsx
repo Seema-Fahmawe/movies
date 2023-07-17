@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styles from '../Movies/Movies.module.css';
 import { moviesTvPeopleContext } from '../Context/MoviesTVPeopleContext.jsx';
+import LoaderSection from '../LoaderSections/LoaderSection.jsx';
 
 export default function Filter({ items, setFiltered, setSearchItem, activeGenre, setActiveGenre, type }) {
 
@@ -33,16 +34,18 @@ export default function Filter({ items, setFiltered, setSearchItem, activeGenre,
 
     return (
         <>
-            <ul class='nav gap-3 justify-content-center mb-5'>
-                <li class="nav-item" >
-                    <button class={activeGenre === 0 ? `${styles.navLinkActive}` : `${styles.navLink}`} aria-current="page" onClick={() => setActiveGenre(0)}>All</button>
-                </li>
-                {genres.map((genre) => {
-                    return <li class="nav-item navItem" key={genre.id}>
-                        <button onClick={() => setActiveGenre(genre.id)} class={activeGenre === genre.id ? `${styles.navLinkActive}` : `${styles.navLink}`} aria-current="page" >{genre.name}</button>
+            {genres.length > 0 ? <>
+                <ul class='nav gap-3 justify-content-center mb-5'>
+                    <li class="nav-item" >
+                        <button class={activeGenre === 0 ? `${styles.navLinkActive}` : `${styles.navLink}`} aria-current="page" onClick={() => setActiveGenre(0)}>All</button>
                     </li>
-                })}
-            </ul>
+                    {genres.map((genre) => {
+                        return <li class="nav-item navItem" key={genre.id}>
+                            <button onClick={() => setActiveGenre(genre.id)} class={activeGenre === genre.id ? `${styles.navLinkActive}` : `${styles.navLink}`} aria-current="page" >{genre.name}</button>
+                        </li>
+                    })}
+                </ul></> : <><LoaderSection /></>}
+
         </>
     )
 }

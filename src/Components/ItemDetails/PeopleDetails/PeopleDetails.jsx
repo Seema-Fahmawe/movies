@@ -11,7 +11,6 @@ export default function PeopleDetails() {
     let { id } = useParams();
     const [person, setPerson] = useState({});
     const { getItemDetailsContext } = useContext(moviesTvPeopleContext);
-
     const [movieCasts, setMovieCasts] = useState([]);
     const [movieCrew, setMovieCrew] = useState([]);
     const [movies, setMovies] = useState([]);
@@ -50,6 +49,7 @@ export default function PeopleDetails() {
         tvCredits();
         movieCredits();
     }, [id]);
+
 
     return (
         <>

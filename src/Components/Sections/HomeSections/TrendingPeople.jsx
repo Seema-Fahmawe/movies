@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { moviesTvPeopleContext } from '../../Context/MoviesTVPeopleContext.jsx';
 import CustomeHomeTitleSections from '../../Custome/CustomeHomeTitleSections.jsx';
 import CustomeBodyHomeSections from '../../Custome/CustomeBodyHomeSections.jsx';
+import LoaderSection from '../../LoaderSections/LoaderSection.jsx';
 
 export default function TrendingPeople() {
 
@@ -30,8 +31,10 @@ export default function TrendingPeople() {
 
     return (
         <>
+        {trendingPeople.length >0 ?<>
             <CustomeHomeTitleSections title="Trending Persons" link1="Today" link2="This Week" onClick1={() => getTrending('day')} onClick2={() => getTrending('week')} section="people" />
-            <CustomeBodyHomeSections items={trendingPeople} type='People' setting={settings} />
+            <CustomeBodyHomeSections items={trendingPeople} type='People' setting={settings} /></>:<><LoaderSection/></>}
+         
         </>
     )
 }

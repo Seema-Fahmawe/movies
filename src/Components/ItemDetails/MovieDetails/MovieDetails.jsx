@@ -62,7 +62,6 @@ export default function MovieDetails() {
         getReviews();
         getRecommendatins();
         getSimilar();
-
     }, [id]);
 
     useEffect(() => {
@@ -71,12 +70,12 @@ export default function MovieDetails() {
         }, 4000);
     }, []);
 
-
     return (
         <>
-            {loading ? <><LoaderSection /></> : <><CustomeHeaderItemDetails item={movie} genres={genres} casts={casts} setCasts={setCasts} castAll={castAll} type="Movie" />
-                <CustomeBodyItemDetails video={videos} review={reviews} recommendation={recommendation} similar={similar} type="Movie" id={id} /></>}
-
+            {!loading ? <>
+                <CustomeHeaderItemDetails item={movie} genres={genres} casts={casts} setCasts={setCasts} castAll={castAll} type="Movie" />
+                <CustomeBodyItemDetails video={videos} review={reviews} recommendation={recommendation} similar={similar} type="Movie" id={id} /></> :
+                <><LoaderSection /></>}
         </>
     )
 }
